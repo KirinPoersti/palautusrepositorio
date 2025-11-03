@@ -21,3 +21,18 @@ class TestLaskin(unittest.TestCase):
         laskin.suorita()
 
         self.assertEqual(io.outputs[0], "Summa: 4")
+
+    def test_kaksi_perakkaista_summaa_oikein(self):
+        # testissä kovakoodataan ohjelman syötteiksi 2, 5, 10, 15 ja -9999
+        # ensimmäinen lasku: 2 + 5 = 7
+        # toinen lasku: 10 + 15 = 25
+        # -9999 lopettaa ohjelman
+        io = StubIO(["2", "5", "10", "15", "-9999"])
+        
+        laskin = Laskin(io)
+        laskin.suorita()
+
+        # varmistetaan, että ohjelma tulosti molemmat summat oikein
+        self.assertEqual(len(io.outputs), 2)
+        self.assertEqual(io.outputs[0], "Summa: 7")
+        self.assertEqual(io.outputs[1], "Summa: 25")
