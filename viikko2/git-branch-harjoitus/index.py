@@ -1,4 +1,4 @@
-# tehd‰‰n alussa importit
+Ôªø# tehd√§√§n alussa importit
 
 from logger import logger
 from summa import summa
@@ -8,8 +8,8 @@ logger("aloitetaan ohjelma") # muutos mainissa
 
 x = int(input("luku 1: "))
 y = int(input("luku 2: "))
-print(f"{summa(x, y)}")
-print(f"{erotus(x, y)}")
+print(f"{x} + {y} = {summa(x, y)}") # muutos mainissa
+print(f"{x} - {y} = {erotus(x, y)}") # muutos mainissa
 
-logger("lopetetaan ohjelma")`nprint("goodbye!") # lis‰ys bugikorjaus-branchissa
-
+logger("lopetetaan ohjelma")
+print("goodbye!")
